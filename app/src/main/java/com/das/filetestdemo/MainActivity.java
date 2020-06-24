@@ -33,7 +33,6 @@ import static com.das.filetestdemo.utils.ConstantUtils.bitmapToBase64;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private AssetManager assetManager;
     private MediaPlayer mediaPlayer;
-    private static final String TAG = "main";
     /**
      * 获取存取text的缓存文件夹
      */
@@ -126,23 +125,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_ass:
                 //读取assets文件数据
-//                String str = AssetsUtils.getAssetsFile(this,"test.txt");
-//                tv_file.setText(str);
+                String str = AssetsUtils.getAssetsFile(this,"test.txt");
+                tv_file.setText(str);
                 //读取assets文件数据
 //                String str = AssetsUtils.getResourceRaw(this,R.raw.test);
 //                tv_file.setText(str);
                 //读取与res同目录assets的文件(音频文件)
-                AssetFileDescriptor fileDescriptor = AssetsUtils.getAssetsVoice(this, "alarm.mp3");
-                mediaPlayer.reset();
-                try {
-                    mediaPlayer.setDataSource(fileDescriptor.getFileDescriptor(),
-                            fileDescriptor.getStartOffset(), fileDescriptor.getLength());
-                    mediaPlayer.prepare();
-                    mediaPlayer.setLooping(true);
-                    mediaPlayer.start();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+//                AssetFileDescriptor fileDescriptor = AssetsUtils.getAssetsVoice(this, "alarm.mp3");
+//                mediaPlayer.reset();
+//                try {
+//                    mediaPlayer.setDataSource(fileDescriptor.getFileDescriptor(),
+//                            fileDescriptor.getStartOffset(), fileDescriptor.getLength());
+//                    mediaPlayer.prepare();
+//                    mediaPlayer.setLooping(true);
+//                    mediaPlayer.start();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
                 break;
             case R.id.btn_clean:
                 //清除缓存文件夹内容
